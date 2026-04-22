@@ -1,0 +1,7 @@
+C:\Users\Santiago SDU\OneDrive - Syddansk Universitet\Escritorio\Advanced OOP Home Assignments\FlightTracker\obj\Debug\net8.0\FlightTracker.csproj.AssemblyReference.cache
+C:\Users\Santiago SDU\OneDrive - Syddansk Universitet\Escritorio\Advanced OOP Home Assignments\FlightTracker\obj\Debug\net8.0\Avalonia\Resources.Inputs.cache
+C:\Users\Santiago SDU\OneDrive - Syddansk Universitet\Escritorio\Advanced OOP Home Assignments\FlightTracker\obj\Debug\net8.0\Avalonia\resources
+C:\Users\Santiago SDU\OneDrive - Syddansk Universitet\Escritorio\Advanced OOP Home Assignments\FlightTracker\obj\Debug\net8.0\FlightTracker.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Santiago SDU\OneDrive - Syddansk Universitet\Escritorio\Advanced OOP Home Assignments\FlightTracker\obj\Debug\net8.0\FlightTracker.AssemblyInfoInputs.cache
+C:\Users\Santiago SDU\OneDrive - Syddansk Universitet\Escritorio\Advanced OOP Home Assignments\FlightTracker\obj\Debug\net8.0\FlightTracker.AssemblyInfo.cs
+C:\Users\Santiago SDU\OneDrive - Syddansk Universitet\Escritorio\Advanced OOP Home Assignments\FlightTracker\obj\Debug\net8.0\FlightTracker.csproj.CoreCompileInputs.cache

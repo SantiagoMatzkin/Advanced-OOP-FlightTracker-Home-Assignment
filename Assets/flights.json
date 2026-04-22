@@ -1,0 +1,14 @@
+[
+  {
+    "FlightNumber": "SK123",
+    "Airline": "SAS",
+    "From": "CPH",
+    "To": "LHR"
+  },
+  {
+    "FlightNumber": "LH456",
+    "Airline": "Lufthansa",
+    "From": "CPH",
+    "To": "FRA"
+  }
+]
