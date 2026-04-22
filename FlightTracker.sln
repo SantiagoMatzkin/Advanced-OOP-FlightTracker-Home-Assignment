@@ -4,6 +4,8 @@ VisualStudioVersion = 17.5.2.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FlightTracker", "FlightTracker.csproj", "{6E532641-97BD-F39F-EFAB-589C375E712A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FlightTracker.Tests", "FlightTracker.Tests\FlightTracker.Tests.csproj", "{E3E4C1FE-6C5E-4A8D-95DD-9A31C32143A4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -14,6 +16,10 @@ Global
 		{6E532641-97BD-F39F-EFAB-589C375E712A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6E532641-97BD-F39F-EFAB-589C375E712A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6E532641-97BD-F39F-EFAB-589C375E712A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E3E4C1FE-6C5E-4A8D-95DD-9A31C32143A4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E3E4C1FE-6C5E-4A8D-95DD-9A31C32143A4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E3E4C1FE-6C5E-4A8D-95DD-9A31C32143A4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E3E4C1FE-6C5E-4A8D-95DD-9A31C32143A4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

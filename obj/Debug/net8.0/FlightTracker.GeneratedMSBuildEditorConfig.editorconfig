@@ -4,6 +4,8 @@ build_property.AvaloniaNameGeneratorBehavior = InitializeComponent
 build_property.AvaloniaNameGeneratorDefaultFieldModifier = internal
 build_property.AvaloniaNameGeneratorFilterByPath = *
 build_property.AvaloniaNameGeneratorFilterByNamespace = *
+build_property.AvaloniaNameGeneratorViewFileNamingStrategy = NamespaceAndClassName
+build_property.AvaloniaNameGeneratorAttachDevTools = true
 build_property.TargetFramework = net8.0
 build_property.TargetFrameworkIdentifier = .NETCoreApp
 build_property.TargetFrameworkVersion = v8.0
@@ -24,5 +26,14 @@ build_property.EnableCodeStyleSeverity =
 [C:/Users/Santiago SDU/OneDrive - Syddansk Universitet/Escritorio/Advanced OOP Home Assignments/FlightTracker/App.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
+[C:/Users/Santiago SDU/OneDrive - Syddansk Universitet/Escritorio/Advanced OOP Home Assignments/FlightTracker/Views/AirportFlightInfoView.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
+[C:/Users/Santiago SDU/OneDrive - Syddansk Universitet/Escritorio/Advanced OOP Home Assignments/FlightTracker/Views/AnalyticsView.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
 [C:/Users/Santiago SDU/OneDrive - Syddansk Universitet/Escritorio/Advanced OOP Home Assignments/FlightTracker/Views/MainWindow.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
+[C:/Users/Santiago SDU/OneDrive - Syddansk Universitet/Escritorio/Advanced OOP Home Assignments/FlightTracker/Views/RouteVisualizationView.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml

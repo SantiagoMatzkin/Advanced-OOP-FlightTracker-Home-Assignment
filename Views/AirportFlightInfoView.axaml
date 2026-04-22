@@ -1,0 +1,112 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             x:Class="FlightTracker.Views.AirportFlightInfoView">
+    <Border Padding="12"
+            Background="#111827"
+            BorderBrush="#1F2937"
+            BorderThickness="1"
+            CornerRadius="8">
+    <Grid RowDefinitions="Auto,Auto,Auto,*"
+          RowSpacing="12">
+        <Grid ColumnDefinitions="2*,1.2*,1.2*,1.2*,Auto"
+                  ColumnSpacing="10">
+                <StackPanel Grid.Column="0"
+                            Spacing="6">
+            <TextBlock Foreground="#F9FAFB"
+                   Text="Airport" />
+                    <ComboBox ItemsSource="{Binding Airports}"
+                              SelectedItem="{Binding SelectedAirport}" />
+                </StackPanel>
+
+                <StackPanel Grid.Column="1"
+                            Spacing="6">
+            <TextBlock Foreground="#F9FAFB"
+                   Text="Departure Date" />
+            <DatePicker SelectedDate="{Binding Filters.DepartureDate}" />
+        </StackPanel>
+
+        <StackPanel Grid.Column="2"
+                Spacing="6">
+            <TextBlock Foreground="#F9FAFB"
+                   Text="Aircraft" />
+            <ComboBox ItemsSource="{Binding AircraftFilters}"
+                  SelectedItem="{Binding Filters.AircraftFilter}" />
+        </StackPanel>
+
+        <StackPanel Grid.Column="3"
+                Spacing="6">
+            <TextBlock Foreground="#F9FAFB"
+                   Text="Status filter" />
+                    <ComboBox ItemsSource="{Binding StatusFilters}"
+                  SelectedItem="{Binding Filters.StatusFilter}" />
+                </StackPanel>
+
+        <Button Grid.Column="4"
+                        VerticalAlignment="Bottom"
+                        Command="{Binding ExportFlightsCommand}"
+                        Content="Export Flights (CSV)" />
+            </Grid>
+
+        <TextBlock Grid.Row="1"
+                       Foreground="#CBD5E1"
+                       Text="{Binding ExportMessage}" />
+
+        <Grid Grid.Row="2"
+                  RowDefinitions="Auto,*"
+                  RowSpacing="6">
+                <Grid ColumnDefinitions="1.2*,1.4*,1.4*,1.5*,1.3*,1*"
+                      ColumnSpacing="8"
+                      Margin="0,0,0,4">
+                    <TextBlock FontWeight="SemiBold"
+                               Text="Flight #" />
+                    <TextBlock Grid.Column="1"
+                               FontWeight="SemiBold"
+                               Text="Destination" />
+                    <TextBlock Grid.Column="2"
+                               FontWeight="SemiBold"
+                               Text="Departure (UTC)" />
+                    <TextBlock Grid.Column="3"
+                               FontWeight="SemiBold"
+                               Text="Aircraft" />
+                    <TextBlock Grid.Column="4"
+                               FontWeight="SemiBold"
+                               Text="Airline" />
+                    <TextBlock Grid.Column="5"
+                               FontWeight="SemiBold"
+                               Text="Status" />
+                </Grid>
+
+                <ListBox Grid.Row="1"
+                         Background="#0F172A"
+                         BorderBrush="#1F2937"
+                         ItemsSource="{Binding FilteredFlights}">
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <Border Margin="0,0,0,6"
+                                    Padding="8"
+                                    Background="#1F2937"
+                                    BorderBrush="#334155"
+                                    BorderThickness="1"
+                                    CornerRadius="6">
+                                <Grid ColumnDefinitions="1.2*,1.4*,1.4*,1.5*,1.3*,1*"
+                                      ColumnSpacing="8">
+                                    <TextBlock Text="{Binding FlightNumber}" />
+                                    <TextBlock Grid.Column="1"
+                                               Text="{Binding DestinationDisplay}" />
+                                    <TextBlock Grid.Column="2"
+                                               Text="{Binding DepartureUtc, StringFormat='{}{0:yyyy-MM-dd HH:mm}'}" />
+                                    <TextBlock Grid.Column="3"
+                                               Text="{Binding AircraftType}" />
+                                    <TextBlock Grid.Column="4"
+                                               Text="{Binding Airline}" />
+                                    <TextBlock Grid.Column="5"
+                                               Text="{Binding Status}" />
+                                </Grid>
+                            </Border>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
+            </Grid>
+        </Grid>
+    </Border>
+</UserControl>

@@ -1,6 +1,11 @@
 using Avalonia;
 using Avalonia.Controls.ApplicationLifetimes;
 using Avalonia.Markup.Xaml;
+using FlightTracker.Services;
+using FlightTracker.ViewModels;
+using FlightTracker.Views;
+
+namespace FlightTracker;
 
 public partial class App : Application
 {
@@ -10,8 +15,24 @@ public partial class App : Application
     {
         if (ApplicationLifetime is IClassicDesktopStyleApplicationLifetime desktop)
         {
-            desktop.MainWindow = new MainWindow();
+            var dataService = new JsonFlightDataService();
+            var analyticsService = new FlightAnalyticsService();
+            var exportService = new ExportService();
+            var preferencesService = new JsonUserPreferencesService();
+
+            var flights = dataService.LoadFlights();
+            var mainWindowViewModel = new MainWindowViewModel(
+                flights,
+                analyticsService,
+                exportService,
+                preferencesService);
+
+            desktop.MainWindow = new MainWindow
+            {
+                DataContext = mainWindowViewModel
+            };
         }
+
         base.OnFrameworkInitializationCompleted();
     }
 }

@@ -1,0 +1,115 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mapsui="clr-namespace:Mapsui.UI.Avalonia;assembly=Mapsui.UI.Avalonia"
+             x:Class="FlightTracker.Views.RouteVisualizationView">
+    <Grid ColumnDefinitions="370,*"
+          Background="#0B1220"
+          ColumnSpacing="12">
+        <Border Grid.Column="0"
+                Padding="12"
+                Background="#111827"
+                BorderBrush="#1F2937"
+                BorderThickness="1"
+                CornerRadius="8">
+            <Grid RowDefinitions="Auto,Auto,Auto,Auto,*"
+                  RowSpacing="10">
+                <TextBlock FontSize="16"
+                           FontWeight="SemiBold"
+                           Foreground="#F9FAFB"
+                           Text="Route Exploration" />
+
+                <TextBox Grid.Row="1"
+                         Watermark="Search by airport name/code"
+                         Text="{Binding Filters.AirportSearchText, UpdateSourceTrigger=PropertyChanged}" />
+
+                <Grid Grid.Row="2"
+                      ColumnDefinitions="*,*,*"
+                      ColumnSpacing="8">
+                    <StackPanel Spacing="4">
+                        <TextBlock Foreground="#CBD5E1"
+                                   Text="Departure date" />
+                        <DatePicker SelectedDate="{Binding Filters.DepartureDate}" />
+                    </StackPanel>
+
+                    <StackPanel Grid.Column="1"
+                                Spacing="4">
+                        <TextBlock Foreground="#CBD5E1"
+                                   Text="Aircraft" />
+                        <ComboBox ItemsSource="{Binding AircraftFilters}"
+                                  SelectedItem="{Binding Filters.AircraftFilter}" />
+                    </StackPanel>
+
+                    <StackPanel Grid.Column="2"
+                                Spacing="4">
+                        <TextBlock Foreground="#CBD5E1"
+                                   Text="Status" />
+                        <ComboBox ItemsSource="{Binding StatusFilters}"
+                                  SelectedItem="{Binding Filters.StatusFilter}" />
+                    </StackPanel>
+                </Grid>
+
+                <StackPanel Grid.Row="3"
+                            Spacing="8">
+                    <TextBlock Text="Origin airports" />
+                    <ListBox Height="180"
+                             Background="#0F172A"
+                             BorderBrush="#1F2937"
+                             ItemsSource="{Binding FilteredOriginAirports}"
+                             SelectedItem="{Binding SelectedOriginAirport}" />
+                    <Button Command="{Binding ClearSelectionCommand}"
+                            HorizontalAlignment="Left"
+                            Content="Clear Selection" />
+                        <Button Command="{Binding ToggleLiveTrackingCommand}"
+                            HorizontalAlignment="Left"
+                            Content="{Binding LiveTrackingButtonText}" />
+                        <TextBlock Foreground="#CBD5E1"
+                               Text="{Binding LiveTrackingStatus}"
+                               TextWrapping="Wrap" />
+                </StackPanel>
+
+                <StackPanel Grid.Row="4"
+                            Spacing="8">
+                    <TextBlock FontWeight="SemiBold"
+                               Text="Destination connections" />
+                    <TextBlock Foreground="#CBD5E1"
+                               Text="{Binding SelectionHint}"
+                               TextWrapping="Wrap" />
+
+                    <ListBox Background="#0F172A"
+                             BorderBrush="#1F2937"
+                             ItemsSource="{Binding DestinationRoutes}">
+                        <ListBox.ItemTemplate>
+                            <DataTemplate>
+                                <Border Margin="0,0,0,8"
+                                        Padding="8"
+                                        Background="#1F2937"
+                                        BorderBrush="#334155"
+                                        BorderThickness="1"
+                                        CornerRadius="6">
+                                    <StackPanel Spacing="2">
+                                        <TextBlock FontWeight="SemiBold"
+                                                   Text="{Binding Route}" />
+                                        <TextBlock Foreground="#E5E7EB"
+                                                   Text="{Binding DestinationName}" />
+                                        <TextBlock Foreground="#94A3B8"
+                                                   Text="{Binding DestinationCountry}" />
+                                        <TextBlock Foreground="#22D3EE"
+                                                   Text="{Binding FlightsCount, StringFormat='Flights: {0}'}" />
+                                    </StackPanel>
+                                </Border>
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+                    </ListBox>
+                </StackPanel>
+            </Grid>
+        </Border>
+
+        <Border Grid.Column="1"
+                Background="#0B1220"
+                BorderBrush="#1F2937"
+                BorderThickness="1"
+                CornerRadius="8">
+            <mapsui:MapControl x:Name="RouteMapControl" />
+        </Border>
+    </Grid>
+</UserControl>

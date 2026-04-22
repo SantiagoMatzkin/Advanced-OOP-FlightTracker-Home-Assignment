@@ -1,6 +1,55 @@
 <Window xmlns="https://github.com/avaloniaui"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    Width="800" Height="600"
-    x:Class="MainWindow">
-    <TextBlock Text="Flight Tracker System" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="24" />
+    xmlns:views="using:FlightTracker.Views"
+    x:Class="FlightTracker.Views.MainWindow"
+    Width="1400"
+    Height="900"
+    Background="#030712"
+    Title="Flight Tracker System">
+    <DockPanel LastChildFill="True">
+        <Border DockPanel.Dock="Top"
+                Padding="18,14"
+                Background="#111827">
+            <StackPanel Spacing="6">
+                <DockPanel>
+                    <StackPanel DockPanel.Dock="Left"
+                                Spacing="2">
+                        <TextBlock FontSize="24"
+                                   FontWeight="SemiBold"
+                                   Foreground="White"
+                                   Text="Flight Tracker System" />
+                        <TextBlock Foreground="#C7D2FE"
+                                   Text="Sønderborg Airport Control and Analytics Dashboard" />
+                    </StackPanel>
+
+                    <StackPanel DockPanel.Dock="Right"
+                                Orientation="Horizontal"
+                                Spacing="8"
+                                VerticalAlignment="Center">
+                        <Button Command="{Binding NavigateBackCommand}"
+                                Content="Back" />
+                        <Button Command="{Binding NavigateForwardCommand}"
+                                Content="Forward" />
+                    </StackPanel>
+                </DockPanel>
+
+                <TextBlock Foreground="#9CA3AF"
+                           Text="{Binding NavigationHistoryText}" />
+            </StackPanel>
+        </Border>
+
+        <TabControl Margin="12"
+                    SelectedIndex="{Binding SelectedTabIndex, Mode=TwoWay}"
+                    Background="#0B1220">
+            <TabItem Header="View 1 - Route Visualization">
+                <views:RouteVisualizationView DataContext="{Binding RouteVisualization}" />
+            </TabItem>
+            <TabItem Header="View 2 - Airport Flight Info">
+                <views:AirportFlightInfoView DataContext="{Binding AirportFlightInfo}" />
+            </TabItem>
+            <TabItem Header="View 3 - Analytics (LINQ)">
+                <views:AnalyticsView DataContext="{Binding Analytics}" />
+            </TabItem>
+        </TabControl>
+    </DockPanel>
 </Window>

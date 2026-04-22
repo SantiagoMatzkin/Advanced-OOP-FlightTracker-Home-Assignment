@@ -52,15 +52,35 @@
           "dependencies": {
             "Avalonia": {
               "target": "Package",
-              "version": "[11.0.0, )"
+              "version": "[11.3.14, )"
             },
             "Avalonia.Desktop": {
               "target": "Package",
-              "version": "[11.0.0, )"
+              "version": "[11.3.14, )"
             },
-            "ReactiveUI": {
+            "Avalonia.Fonts.Inter": {
               "target": "Package",
-              "version": "[19.2.1, )"
+              "version": "[11.3.14, )"
+            },
+            "Avalonia.Themes.Fluent": {
+              "target": "Package",
+              "version": "[11.3.14, )"
+            },
+            "CommunityToolkit.Mvvm": {
+              "target": "Package",
+              "version": "[8.2.2, )"
+            },
+            "LiveChartsCore.SkiaSharpView.Avalonia": {
+              "target": "Package",
+              "version": "[2.0.1, )"
+            },
+            "Mapsui.Avalonia": {
+              "target": "Package",
+              "version": "[5.0.2, )"
+            },
+            "Mapsui.Nts": {
+              "target": "Package",
+              "version": "[5.0.2, )"
             }
           },
           "imports": [

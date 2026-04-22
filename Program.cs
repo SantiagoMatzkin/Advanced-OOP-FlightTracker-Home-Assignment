@@ -1,9 +1,8 @@
-using System;
 using Avalonia;
-using Avalonia.Controls.ApplicationLifetimes;
-using Avalonia.ReactiveUI;
 
-class Program
+namespace FlightTracker;
+
+internal static class Program
 {
     [STAThread]
     public static void Main(string[] args)
@@ -14,5 +13,5 @@ class Program
     public static AppBuilder BuildAvaloniaApp()
         => AppBuilder.Configure<App>()
             .UsePlatformDetect()
-            .UseReactiveUI();
+            .LogToTrace();
 }
